@@ -1,10 +1,10 @@
-package maveninaction.mavenlearning;
+package maveninaction.modulesecond;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MavenLearningApplicationTests {
+class ModuleSecondApplicationTests {
 
     @Test
     void contextLoads() {

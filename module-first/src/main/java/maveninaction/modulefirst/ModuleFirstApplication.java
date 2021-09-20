@@ -1,13 +1,13 @@
-package maveninaction.mavenlearning;
+package maveninaction.modulefirst;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MavenLearningApplication {
+public class ModuleFirstApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MavenLearningApplication.class, args);
+        SpringApplication.run(ModuleFirstApplication.class, args);
     }
 
 }

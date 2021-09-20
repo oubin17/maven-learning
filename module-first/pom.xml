@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>maven-in-action</groupId>
+    <artifactId>module-first</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>module-first</name>
+    <description>Module 1 for Spring Boot</description>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--
+     repository:可以使用repository子元素声明一个活着多个远程仓库
+
+id必须是唯一的，maven自带的中央仓库使用的id为central，如果其他仓库也使用该id，会覆盖中央仓库的配置。
+
+releases:是否开启发布版本的下载支持
+
+snapshots:是否开启快照版本的下载支持
+
+enable:
+
+updatePolicy:默认daily never，always interval:X（x间隔分钟数）
+
+checksumPolicy:检查检验和文件的策略
+     -->
+    <repositories>
+        <repository>
+            <id>jboss</id>
+            <name>JBoss Repository</name>
+            <url>http://repository.jboss.com/maven2/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>proj-releases</id>
+            <name>Proj Release Repository</name>
+            <url>https://192.168.1.100/content/repositories/proj-releases</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>proj-snapshots</id>
+            <name>Proj Snapshot Repository</name>
+            <url>https://192.168.1.100/content/repositories/proj-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
